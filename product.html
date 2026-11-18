@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Норвежский лес — роман Харуки Мураками. Характеристики издания и добавление в корзину.">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <title>Норвежский лес — Мураками Книги</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">
+        <span class="site-header__logo-mark">HM</span>
+        <span class="site-header__logo-text">Мураками&nbsp;Книги</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <button
+          class="site-nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav-list"
+          aria-label="Открыть меню"
+        >
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+        </button>
+        <ul class="site-nav__list" id="site-nav-list">
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html">Главная</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__link--active" href="product.html" aria-current="page">Товар</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="cart.html">Корзина<span class="cart-badge" data-cart-count hidden>0</span></a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="order.html">Заявка</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Включить тёмную тему">
+          <span class="theme-toggle__icon" aria-hidden="true">&#9683;</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+      <span class="breadcrumbs__current">Норвежский лес</span>
+    </nav>
+
+    <section class="product-layout">
+
+      <div class="product-gallery">
+        <picture>
+          <source
+            type="image/webp"
+            srcset="images/norwegian-wood-480.webp 480w,
+                    images/norwegian-wood-640.webp 640w,
+                    images/norwegian-wood-960.webp 960w"
+            sizes="(max-width: 1023px) 100vw, 420px">
+          <img
+            class="product-gallery__img"
+            src="images/norwegian-wood-640.jpg"
+            srcset="images/norwegian-wood-480.jpg 480w,
+                    images/norwegian-wood-640.jpg 640w,
+                    images/norwegian-wood-960.jpg 960w"
+            sizes="(max-width: 1023px) 100vw, 420px"
+            alt="Обложка романа Харуки Мураками «Норвежский лес»"
+            width="640"
+            height="979">
+        </picture>
+      </div>
+
+      <div class="product-info">
+        <h1 class="product-info__title">Норвежский лес</h1>
+        <p class="product-info__meta">Роман · 1987 · Харуки Мураками</p>
+        <p class="product-info__price">890 ₽</p>
+        <p class="product-info__text">
+          Самый известный роман Харуки Мураками — история студента Тору Ватанабэ,
+          который пытается найти себя между двумя очень разными девушками и пережить
+          утрату близкого друга. Пронзительный текст о любви, смерти и взрослении,
+          сделавший Мураками культовым писателем.
+        </p>
+
+        <div class="product-info__actions">
+          <button
+            class="button button--primary"
+            type="button"
+            data-action="add-to-cart"
+            data-product-id="1"
+          >В корзину</button>
+          <a class="button button--secondary" href="catalog.html">Вернуться в каталог</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="specs-title">
+      <h2 class="section__title" id="specs-title">Характеристики издания</h2>
+
+      <div class="table-wrapper">
+        <table class="product-table">
+          <caption>Характеристики товара</caption>
+          <thead>
+            <tr>
+              <th scope="col">Параметр</th>
+              <th scope="col">Значение</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Автор</th>
+              <td data-label="Автор">Харуки Мураками</td>
+            </tr>
+            <tr>
+              <th scope="row">Год написания</th>
+              <td data-label="Год написания">1987</td>
+            </tr>
+            <tr>
+              <th scope="row">Издательство</th>
+              <td data-label="Издательство">Азбука</td>
+            </tr>
+            <tr>
+              <th scope="row">Количество страниц</th>
+              <td data-label="Количество страниц">384</td>
+            </tr>
+            <tr>
+              <th scope="row">Переплёт</th>
+              <td data-label="Переплёт">Твёрдый</td>
+            </tr>
+            <tr>
+              <th scope="row">Возрастное ограничение</th>
+              <td data-label="Возрастное ограничение">16+</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Мураками Книги. Учебный проект.</p>
+      <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    </div>
+  </footer>
+</body>
+</html>

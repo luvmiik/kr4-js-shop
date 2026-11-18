@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Оформление заявки на книгу с проверкой формы.">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <title>Оформление заявки — Мураками Книги</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/validation.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">
+        <span class="site-header__logo-mark">HM</span>
+        <span class="site-header__logo-text">Мураками&nbsp;Книги</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <button
+          class="site-nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav-list"
+          aria-label="Открыть меню"
+        >
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+        </button>
+        <ul class="site-nav__list" id="site-nav-list">
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html">Главная</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="product.html">Товар</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="cart.html">Корзина<span class="cart-badge" data-cart-count hidden>0</span></a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__link--active" href="order.html" aria-current="page">Заявка</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Включить тёмную тему">
+          <span class="theme-toggle__icon" aria-hidden="true">&#9683;</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current">Заявка</span>
+    </nav>
+
+    <section class="section">
+      <h1 class="section__title">Оформление заявки</h1>
+      <p class="section__lead">
+        Заполните форму — мы свяжемся с вами для подтверждения заказа.
+      </p>
+      <p class="form-note">
+        Поля, отмеченные звёздочкой, обязательны для заполнения.
+      </p>
+
+      <form class="order-form page-form" id="page-order-form" action="#" method="post" novalidate>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="page-order-name">Имя *</label>
+          <input
+            class="order-form__input"
+            id="page-order-name"
+            name="name"
+            type="text"
+            autocomplete="name"
+          >
+          <p class="form-error" id="page-order-name-error"></p>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="page-order-email">E-mail *</label>
+          <input
+            class="order-form__input"
+            id="page-order-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+          >
+          <p class="form-error" id="page-order-email-error"></p>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="page-order-phone">Телефон *</label>
+          <input
+            class="order-form__input"
+            id="page-order-phone"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            placeholder="+7 (900) 000-00-00"
+          >
+          <p class="form-error" id="page-order-phone-error"></p>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="page-order-product">Книга</label>
+          <select class="order-form__select" id="page-order-product" name="product"></select>
+        </div>
+
+        <fieldset class="order-form__field page-form__group--wide">
+          <legend class="order-form__label">Способ доставки</legend>
+          <div class="radio-group">
+            <label class="radio-group__label">
+              <input class="radio-group__input" type="radio" name="delivery" value="Почта России" checked>
+              Почта России
+            </label>
+            <label class="radio-group__label">
+              <input class="radio-group__input" type="radio" name="delivery" value="СДЭК">
+              СДЭК
+            </label>
+            <label class="radio-group__label">
+              <input class="radio-group__input" type="radio" name="delivery" value="Самовывоз">
+              Самовывоз (Москва)
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="order-form__field page-form__group--wide">
+          <label class="order-form__label" for="page-order-comment">Комментарий</label>
+          <textarea
+            class="order-form__textarea"
+            id="page-order-comment"
+            name="comment"
+            rows="4"
+            placeholder="Пожелания к заказу, подарочная упаковка, детали доставки…"
+          ></textarea>
+        </div>
+
+        <div class="order-form__field order-form__field--checkbox page-form__group--wide">
+          <label class="order-form__checkbox">
+            <input
+              class="order-form__checkbox-input"
+              id="page-order-consent"
+              name="consent"
+              type="checkbox"
+            >
+            <span class="order-form__checkbox-text">
+              Я согласен(на) на обработку персональных данных
+                и подтверждаю, что ознакомлен(а) с
+                <a href="#" class="order-form__link">политикой конфиденциальности</a>. *
+            </span>
+          </label>
+          <p class="form-error" id="page-order-consent-error"></p>
+        </div>
+
+        <div class="order-form__actions page-form__group--wide">
+          <button class="button button--primary" type="submit">Отправить заявку</button>
+          <button class="button button--secondary" type="reset">Очистить форму</button>
+        </div>
+
+        <p class="form-message page-form__group--wide" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Мураками Книги. Учебный проект.</p>
+      <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    </div>
+  </footer>
+
+  <p class="success-message" id="success-message" hidden role="status">
+    Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.
+  </p>
+</body>
+</html>

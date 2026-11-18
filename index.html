@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Онлайн-магазин книг Харуки Мураками. Коллекционные издания, новинки и бестселлеры.">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <title>Книги Харуки Мураками — Онлайн-магазин</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/modal.js" defer></script>
+  <script src="js/catalog.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">
+        <span class="site-header__logo-mark">HM</span>
+        <span class="site-header__logo-text">Мураками&nbsp;Книги</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <button
+          class="site-nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav-list"
+          aria-label="Открыть меню"
+        >
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+        </button>
+        <ul class="site-nav__list" id="site-nav-list">
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">Главная</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="product.html">Товар</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="cart.html">Корзина<span class="cart-badge" data-cart-count hidden>0</span></a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="order.html">Заявка</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Включить тёмную тему">
+          <span class="theme-toggle__icon" aria-hidden="true">&#9683;</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <div class="hero__content">
+        <p class="hero__eyebrow">Японская литература · Коллекция</p>
+        <h1 class="hero__title">Книги Харуки Мураками</h1>
+        <p class="hero__text">
+          «Если ты просыпаешься утром и не знаешь, куда идти, — просто иди.
+          Мир всё равно куда-нибудь тебя приведёт».
+        </p>
+        <a class="button button--primary" href="catalog.html">Перейти в каталог</a>
+      </div>
+
+      <div class="hero__portrait">
+        <picture>
+          <source media="(min-width: 1440px)" srcset="images/hero-desktop.jpg">
+          <source media="(min-width: 768px)" srcset="images/hero-tablet.jpg">
+          <img
+            class="hero__img"
+            src="images/hero-mobile.jpg"
+            alt="Харуки Мураками"
+            width="480"
+            height="270"
+          >
+        </picture>
+      </div>
+    </section>
+
+    <section class="section" id="advantages" aria-labelledby="advantages-title">
+      <h2 class="section__title" id="advantages-title">Почему выбирают нас</h2>
+
+      <ul class="advantages-list">
+        <li class="advantages-list__item">
+          <span class="advantages-list__num">01</span>
+          <div>
+            <h3 class="advantages-list__title">Оригинальные издания</h3>
+            <p class="advantages-list__text">Только лицензионные переводы от «Азбуки» и «Эксмо».</p>
+          </div>
+        </li>
+        <li class="advantages-list__item">
+          <span class="advantages-list__num">02</span>
+          <div>
+            <h3 class="advantages-list__title">Быстрая доставка</h3>
+            <p class="advantages-list__text">Отправляем заказы в день оформления по всей России.</p>
+          </div>
+        </li>
+        <li class="advantages-list__item">
+          <span class="advantages-list__num">03</span>
+          <div>
+            <h3 class="advantages-list__title">Подарочная упаковка</h3>
+            <p class="advantages-list__text">Бесплатно для заказов от 3000 ₽.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="popular" aria-labelledby="popular-title">
+      <h2 class="section__title" id="popular-title">Бестселлеры</h2>
+
+      <div class="products-grid" data-products-container data-limit="3"></div>
+    </section>
+
+    <aside class="aside-info" aria-labelledby="aside-info-title">
+      <div class="aside-info__content">
+        <h2 class="aside-info__title" id="aside-info-title">О Харуки Мураками</h2>
+        <p class="aside-info__text">
+          Харуки Мураками — один из самых читаемых современных писателей мира.
+          Его книги переведены на 50+ языков, а тиражи превышают десятки миллионов
+          экземпляров. В нашем магазине собраны все ключевые произведения автора —
+          от дебютного «Слушай песню ветра» до последних романов.
+        </p>
+      </div>
+      <div class="aside-info__portrait">
+        <img
+          class="aside-info__img"
+          src="images/haruki-350.jpg"
+          srcset="images/haruki-350.jpg 350w"
+          sizes="(max-width: 767px) 100vw, 300px"
+          alt="Портрет Харуки Мураками"
+          width="350"
+          height="497"
+          loading="lazy">
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Мураками Книги. Учебный проект.</p>
+      <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    </div>
+  </footer>
+</body>
+</html>

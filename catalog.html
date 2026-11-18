@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Каталог книг Харуки Мураками: поиск, фильтрация и сортировка.">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <title>Каталог книг — Мураками Книги</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/modal.js" defer></script>
+  <script src="js/catalog.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">
+        <span class="site-header__logo-mark">HM</span>
+        <span class="site-header__logo-text">Мураками&nbsp;Книги</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <button
+          class="site-nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav-list"
+          aria-label="Открыть меню"
+        >
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+        </button>
+        <ul class="site-nav__list" id="site-nav-list">
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html">Главная</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__link--active" href="catalog.html" aria-current="page">Каталог</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="product.html">Товар</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="cart.html">Корзина<span class="cart-badge" data-cart-count hidden>0</span></a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="order.html">Заявка</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="contacts.html">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Включить тёмную тему">
+          <span class="theme-toggle__icon" aria-hidden="true">&#9683;</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current">Каталог</span>
+    </nav>
+
+    <section class="section">
+      <h1 class="section__title">Каталог книг Харуки Мураками</h1>
+      <p class="section__lead">
+        Романы, сборники рассказов и эссе. Используйте поиск, фильтры и сортировку,
+        чтобы найти нужную книгу.
+      </p>
+    </section>
+
+    <section class="catalog-layout">
+
+      <aside class="catalog-filters" aria-labelledby="filters-title">
+        <h2 class="catalog-filters__title" id="filters-title">Поиск и фильтры</h2>
+
+        <div class="catalog-controls">
+          <div class="catalog-controls__group">
+            <label class="order-form__label" for="catalog-search">Поиск книги</label>
+            <input
+              class="catalog-controls__input"
+              id="catalog-search"
+              type="search"
+              placeholder="Введите название"
+              autocomplete="off"
+            >
+          </div>
+
+          <div class="catalog-controls__group">
+            <label class="order-form__label" for="category-filter">Категория</label>
+            <select class="catalog-controls__select" id="category-filter">
+              <option value="all">Все категории</option>
+              <option value="novels">Романы</option>
+              <option value="stories">Рассказы</option>
+              <option value="essays">Эссе</option>
+            </select>
+          </div>
+
+          <div class="catalog-controls__group">
+            <label class="order-form__label" for="sort-select">Сортировка</label>
+            <select class="catalog-controls__select" id="sort-select">
+              <option value="default">По умолчанию</option>
+              <option value="price-asc">Сначала дешевле</option>
+              <option value="price-desc">Сначала дороже</option>
+              <option value="title-asc">По названию А-Я</option>
+              <option value="rating-desc">По рейтингу</option>
+            </select>
+          </div>
+
+          <label class="catalog-controls__check">
+            <input type="checkbox" id="available-toggle">
+            Только в наличии
+          </label>
+        </div>
+      </aside>
+
+      <section class="catalog-products" aria-labelledby="all-books-title">
+        <h2 class="catalog-products__title" id="all-books-title">Все книги</h2>
+
+        <p class="catalog-count" aria-live="polite"></p>
+        <p class="catalog-empty" hidden>По выбранным условиям книги не найдены.</p>
+
+        <div class="products-grid" data-products-container></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Мураками Книги. Учебный проект.</p>
+      <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    </div>
+  </footer>
+</body>
+</html>

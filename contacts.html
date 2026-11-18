@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Контакты магазина книг Харуки Мураками.">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <title>Контакты — Мураками Книги</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">
+        <span class="site-header__logo-mark">HM</span>
+        <span class="site-header__logo-text">Мураками&nbsp;Книги</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <button
+          class="site-nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav-list"
+          aria-label="Открыть меню"
+        >
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+        </button>
+        <ul class="site-nav__list" id="site-nav-list">
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html">Главная</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="product.html">Товар</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="cart.html">Корзина<span class="cart-badge" data-cart-count hidden>0</span></a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="order.html">Заявка</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__link--active" href="contacts.html" aria-current="page">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Включить тёмную тему">
+          <span class="theme-toggle__icon" aria-hidden="true">&#9683;</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current">Контакты</span>
+    </nav>
+
+    <section class="section">
+      <h1 class="section__title">Контакты</h1>
+      <p class="section__lead">
+        Свяжитесь с нами удобным способом — отвечаем в течение рабочего дня.
+      </p>
+
+      <ul class="contact-list">
+        <li class="contact-list__item">
+          <span class="contact-list__label">Телефон</span>
+          <span class="contact-list__value"><a href="tel:+79000000000">+7 (900) 000-00-00</a></span>
+        </li>
+        <li class="contact-list__item">
+          <span class="contact-list__label">E-mail</span>
+          <span class="contact-list__value"><a href="mailto:info@murakami-books.ru">info@murakami-books.ru</a></span>
+        </li>
+        <li class="contact-list__item">
+          <span class="contact-list__label">Адрес</span>
+          <span class="contact-list__value">г. Москва, ул. Книжная, д. 1</span>
+        </li>
+        <li class="contact-list__item">
+          <span class="contact-list__label">Режим работы</span>
+          <span class="contact-list__value">Пн–Вс, 10:00–21:00</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="feedback" aria-labelledby="feedback-title">
+      <h2 class="section__title" id="feedback-title">Обратная связь</h2>
+      <p class="section__lead">
+        Если у вас есть вопрос о книге или заказе — напишите нам через форму ниже.
+      </p>
+
+      <form class="order-form page-form" id="feedback-form" action="#" method="post" novalidate>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="feedback-name">Имя *</label>
+          <input
+            class="order-form__input"
+            id="feedback-name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            required
+          >
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="feedback-email">E-mail *</label>
+          <input
+            class="order-form__input"
+            id="feedback-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="order-form__field page-form__group--wide">
+          <label class="order-form__label" for="feedback-message">Сообщение *</label>
+          <textarea
+            class="order-form__textarea"
+            id="feedback-message"
+            name="message"
+            rows="5"
+            required
+          ></textarea>
+        </div>
+
+        <div class="order-form__actions page-form__group--wide">
+          <button class="button button--primary" type="submit">Отправить сообщение</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Мураками Книги. Учебный проект.</p>
+      <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    </div>
+  </footer>
+
+  <p class="success-message" id="success-message" hidden role="status">
+    Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.
+  </p>
+</body>
+</html>
